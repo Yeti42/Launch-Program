@@ -1,16 +1,23 @@
 header {
-    text-align: center;
-    display: flex;
-    justify-content: center;
+  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
-ul.menu li{
-    display: inline;
-    font-size: 20px;
-    margin: 18px;
-  }
+ul.menu li {
+  display: inline;
+  font-size: 20px;
+  margin: 18px;
+}
 
-  .order{
-    display: flex;
-    justify-content: center;
-  }
+.order {
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}

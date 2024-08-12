@@ -4,7 +4,7 @@
 <head>
     <title>Launch Program</title>
     <style type="text/css"></style>
-    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="../layout.css">
 </head>
 <style>
     p {
@@ -25,22 +25,6 @@
             <li><a href="Manual.html">Manual</a></li>
         </ul>
     </nav>
-    <script>
-        var coll = document.getElementsByClassName("collapsible");
-        var i;
-
-        for (i = 0; i < coll.length; i++) {
-            coll[i].addEventListener("click", function () {
-                this.classList.toggle("active");
-                var content = this.nextElementSibling;
-                if (content.style.display === "block") {
-                    content.style.display = "none";
-                } else {
-                    content.style.display = "block";
-                }
-            });
-        }
-    </script>
     <button type="button" class="collapsible">OpenMe</button>
     <div class="content">
         <ul>
@@ -569,7 +553,22 @@
             <p>Word Building Flip Book</p>
         </article>
     </section>
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
 
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>

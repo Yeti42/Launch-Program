@@ -21,5 +21,30 @@
                 <li><a href="GameSection.html">Games</a></li>
             </ul>
         </nav>
+
+        <div class="container">
+            <h1>Volunteer Application Form</h1>
+            <form action="submit_form.php" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+    
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+    
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+    
+                <label for="availability">Availability:</label>
+                <textarea id="availability" name="availability" rows="4" required></textarea>
+    
+                <label for="interests">Areas of Interest:</label>
+                <textarea id="interests" name="interests" rows="4" required></textarea>
+    
+                <label for="experience">Previous Volunteer Experience:</label>
+                <textarea id="experience" name="experience" rows="4" required></textarea>
+    
+                <button type="submit">Submit Application</button>
+            </form>
+        </div>
     </body>
 </html>

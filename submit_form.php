@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         echo "Sorry, there was an error sending your application. Please try again later.";
     }
-    echo ("\n<a href='contact.html'>Return</a>")
+    echo ("\n<a href='contact.html'>Return</a>");
 } else {
     echo "Invalid request method.";
 }

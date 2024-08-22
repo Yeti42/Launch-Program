@@ -1,50 +1,74 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Launch Program</title>
-        <style type="text/css"></style>
-        <link rel="stylesheet" href="layout.css">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
 
-    <body>
-        <header>
-            <h1>Contact Us</h1>
-        </header>
-        <nav class="order">
-            <ul class="menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="Testimonials.html">Testimonials</a></li>
-                <li class="clicked">Contact Us</li>
-                <li><a href="Manual.html">Manual</a></li>
-                <li><a href="GameSection.html">Games</a></li>
-            </ul>
-        </nav>
+<head>
+    <title>Launch Program</title>
+    <style type="text/css">
+        .form {
+            width: 60%;
+            margin: 50px auto;
+            background: rgb(255, 255, 255);
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, textarea {
+            width: 98%;
+            padding: 10px;
+            border: 1px, solid rgba(192, 192, 192, 0.855);
+            border-radius: 5px;
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
+    <link rel="stylesheet" href="layout.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 
-        <div class="container">
-            <h1>Volunteer Application Form</h1>
-            <form action="submit_form.php" method="post">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-    
-                <label for="email">Email Address:</label>
-                <input type="email" id="email" name="email" required>
-    
-                <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="phone" required>
-    
-                <label for="availability">Availability:</label>
-                <textarea id="availability" name="availability" rows="4" required></textarea>
-    
-                <label for="interests">Areas of Interest:</label>
-                <textarea id="interests" name="interests" rows="4" required></textarea>
-    
-                <label for="experience">Previous Volunteer Experience:</label>
-                <textarea id="experience" name="experience" rows="4" required></textarea>
-    
-                <!-- <button type="submit">Submit Application</button> -->
-            </form>
-        </div>
-    </body>
+<body>
+    <header>
+        <h1>Contact Us</h1>
+    </header>
+    <nav class="order">
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Testimonials.html">Testimonials</a></li>
+            <li class="clicked">Contact Us</li>
+            <li><a href="Manual.html">Manual</a></li>
+            <li><a href="GameSection.html">Games</a></li>
+        </ul>
+    </nav>
+
+    <div class = "form">
+        <h1>Volunteer Application Form</h1>
+        
+        <form action="submit_form.php" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+            
+            <label for="availability">Availability:</label>
+            <textarea id="availability" name="availability" rows="4" required></textarea>
+            
+            <label for="interests">Areas of Interest:</label>
+            <textarea id="interests" name="interests" rows="4" required></textarea>
+            
+            <label for="experience">Previous Volunteer Experience:</label>
+            <textarea id="experience" name="experience" rows="4" required></textarea>
+            
+            <!-- <button type="submit">Submit Application</button> -->
+        </form>
+    </div>
+</body>
+
 </html>

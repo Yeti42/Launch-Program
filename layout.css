@@ -11,10 +11,27 @@ ul.menu li {
   border: 2px solid rgb(0, 0, 0);
   background-color: rgba(0, 128, 0, 0.253);
   padding: 2px;
+  text-align: center;
 }
 
+/* Change color of the menu links when hovered over */
 ul.menu li:hover:not(.clicked) {
   background-color: blue;
+}
+
+/* Thinner screen sizes */
+@media (max-width: 600px) {
+  ul.menu li {
+    display: block; /* Stack links vertically */
+    font-size: 18px; /* Slightly smaller font size */
+    margin: 10px 0; /* Adjust margin to avoid overlap */
+    padding: 10px; /* More padding for easier tapping */
+  }
+
+  ul.menu {
+    padding: 0;
+    margin: 0;
+  }
 }
 
 .order {
@@ -50,8 +67,10 @@ button {
   border-radius: 2px;
   background-color: blue;
   margin: 3px;
+  font-size: 22px;
 }
 
+/* Change color of the buttons when hovered over */
 button:hover{
   background-color: gray;
 }

@@ -1,15 +1,13 @@
-
-
 header {
   text-align: center;
   display: flex;
   justify-content: center;
 }
 
-/* .order {
+.order {
   display: flex;
-  justify-content: right;
-} */
+  justify-content: center;
+}
 
 .dropdown {
   position: fixed;
@@ -19,14 +17,17 @@ header {
   background-color: rgb(173, 216, 230);
 }
 
-.order {
-  display: none; /* Hidden by default */
+/* Dropdown menu */
+.orderB {
+  display: none;
   position: fixed;
-  right: 0; /* Align to the right of the button */
+  /* Align to the right of the button */
+  right: 0;
   background-color: #f9f9f9;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  /* Ensure this is below the button */
+  z-index: 0;
   border-radius: 5px;
 }
 
@@ -46,25 +47,34 @@ ul.menu {
   margin: 0;
 }
 
+.order ul.menu li {
+  display: inline;
+  padding: 2px;
+}
+
+.order ul.menu {
+  margin: 10px;
+}
+
 /* Change color of the menu links when hovered over */
 ul.menu li:hover:not(.clicked) {
   background-color: rgba(0, 0, 255, 0.267);
 }
 
-/* Thinner screen sizes *
+/* Thinner screen sizes */
 @media (max-width: 600px) {
-  ul.menu li {
+  .order ul.menu li {
     display: block;
     font-size: 18px;
     margin: 10px 0;
     padding: 10px;
   }
 
-  ul.menu {
+  .order ul.menu {
     padding: 0;
     margin: 0;
   }
-} */
+}
 
 .content {
   padding: 0 18px;
@@ -98,7 +108,7 @@ button {
 }
 
 /* Change color of the buttons when hovered over */
-button:hover{
+button:hover {
   background-color: gray;
 }
 

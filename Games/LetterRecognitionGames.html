@@ -19,18 +19,16 @@
     <header>
         <h1>Launch Program</h1>
     </header>
-    <div class="orderB">
-        <p class="dropdown">AAA</p>
-        <nav class="order">
-            <ul class="menu">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../Testimonials.html">Testimonials</a></li>
-                <li><a href="../contact.html">Contact Us</a></li>
-                <li><a href="../Manual.html">Manual</a></li>
-                <li><a href="../GameSection.html">Games</a></li>
-            </ul>
-        </nav>
-    </div>
+    <button class="dropdown">AAA</button>
+    <nav class="order">
+        <ul class="menu">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../Testimonials.html">Testimonials</a></li>
+            <li><a href="../contact.html">Contact Us</a></li>
+            <li><a href="../Manual.html">Manual</a></li>
+            <li><a href="../GameSection.html">Games</a></li>
+        </ul>
+    </nav>
     <button type="button" class="collapsible">Click me for a list of Letter recognition games</button>
     <div class="content">
         <ul>
@@ -560,6 +558,23 @@
     </section>
     <script>
         var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    </script>
+
+    <script>
+        var coll = document.getElementsByClassName("dropdown");
         var i;
 
         for (i = 0; i < coll.length; i++) {

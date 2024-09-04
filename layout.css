@@ -1,7 +1,4 @@
-.orderB {
-  top: 0px;
-  position: sticky;
-}
+
 
 header {
   text-align: center;
@@ -9,27 +6,44 @@ header {
   justify-content: center;
 }
 
-.order {
+/* .order {
   display: flex;
   justify-content: right;
-}
+} */
 
 .dropdown {
-  display: flex;
-  justify-content: right;
-  padding-right: 2%;
-  padding-top: 2%;
+  position: fixed;
+  right: 2%;
+  top: 2%;
+  border: 2px solid rgb(0, 0, 0);
+  background-color: rgb(173, 216, 230);
+}
+
+.order {
+  display: none; /* Hidden by default */
+  position: fixed;
+  right: 0; /* Align to the right of the button */
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 5px;
 }
 
 ul.menu li {
-  display: inline;
+  display: block;
   font-size: 20px;
   margin: 18px;
   border: 2px solid rgb(0, 0, 0);
   border-radius: 5px;
-  background-color: rgba(0, 128, 0, 0.253);
-  padding: 2px;
+  background-color: rgb(44, 241, 44);
+  padding: 10px;
   text-align: center;
+}
+
+ul.menu {
+  padding: 0;
+  margin: 0;
 }
 
 /* Change color of the menu links when hovered over */
@@ -37,7 +51,7 @@ ul.menu li:hover:not(.clicked) {
   background-color: rgba(0, 0, 255, 0.267);
 }
 
-/* Thinner screen sizes */
+/* Thinner screen sizes *
 @media (max-width: 600px) {
   ul.menu li {
     display: block;
@@ -50,7 +64,7 @@ ul.menu li:hover:not(.clicked) {
     padding: 0;
     margin: 0;
   }
-}
+} */
 
 .content {
   padding: 0 18px;

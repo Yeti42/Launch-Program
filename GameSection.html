@@ -13,6 +13,16 @@
 	<header>
 		<h1>Games</h1>
 	</header>
+	<button class="dropdown">Menu</button>
+	<nav class="orderB">
+        <ul class="menu">
+            <li class="clicked">Home</li>
+            <li><a href="Testimonials.html">Testimonials</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="Manual.html">Manual</a></li>
+            <li><a href="GameSection.html">Games</a></li>
+        </ul>
+    </nav>
 	<nav class="order">
 		<ul class="menu">
 			<li><a href="index.html">Home</a></li>
@@ -22,10 +32,6 @@
 			<li class="clicked">Games</li>
 		</ul>
 	</nav>
-
-	The different groups (e.g. LETTER RECOGNITION-BEGINNING SOUNDS) should be different pages with links to locations
-	within that page to each of the games themselves. <br>
-
 <article>
 	<h2>GAME SECTION</h2>
 	<button class="collapsible">LETTER RECOGNITION-BEGINNING SOUNDS</button>
@@ -181,7 +187,22 @@
 			});
 		}
 	</script>
+	<script>
+        var coll = document.getElementsByClassName("dropdown");
+        var i;
 
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>

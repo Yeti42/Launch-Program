@@ -28,6 +28,16 @@
     <header>
         <h1>Launch Program</h1>
     </header>
+    <button class="dropdown">AAA</button>
+    <nav class="orderB">
+        <ul class="menu">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../Testimonials.html">Testimonials</a></li>
+            <li><a href="../contact.html">Contact Us</a></li>
+            <li><a href="../Manual.html">Manual</a></li>
+            <li><a href="../GameSection.html">Games</a></li>
+        </ul>
+    </nav>
     <nav class="order">
         <ul class="menu">
             <li><a href="../index.html">Home</a></li>
@@ -4205,7 +4215,22 @@
                 wins the game.</p>
         </article>
     </section>
+    <script>
+        var coll = document.getElementsByClassName("dropdown");
+        var i;
 
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>

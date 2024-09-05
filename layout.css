@@ -4,6 +4,10 @@ header {
   justify-content: center;
 }
 
+body {
+  background-image: url('images/background.png');
+}
+
 .order {
   display: flex;
   justify-content: center;
@@ -88,15 +92,16 @@ section {
   font-size: 22px;
 }
 
-.gamearticle {
+/* .gamearticle {
   background-color: rgba(0, 0, 255, 0.226);
-}
+} */
 
 article {
   border: 2px solid rgb(0, 0, 0);
   border-radius: 5px;
   padding: 2%;
   margin-bottom: 6px;
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
 button {

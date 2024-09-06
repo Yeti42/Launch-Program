@@ -63,7 +63,7 @@ ul.menu {
 
 /* Change color of the menu links when hovered over */
 ul.menu li:hover:not(.clicked) {
-  background-color: rgba(0, 0, 255, 0.267);
+  background-color: rgb(158, 158, 253);
 }
 
 /* Thinner screen sizes */

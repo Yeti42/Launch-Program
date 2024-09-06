@@ -4,9 +4,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = htmlspecialchars($_POST['name']);
     $email = htmlspecialchars($_POST['email']);
     $phone = htmlspecialchars($_POST['phone']);
-    $availability = htmlspecialchars($_POST['availability']);
-    $interests = htmlspecialchars($_POST['interests']);
-    $experience = htmlspecialchars($_POST['experience']);
+    $message = htmlspecialchars($_POST['message']);
 
     // Email details
     $to = "dave@stevens-home.com";
@@ -15,9 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     Name: $name\n
     Email: $email\n
     Phone: $phone\n
-    Availability: $availability\n
-    Areas of Interest: $interests\n
-    Previous Volunteer Experience: $experience
+    Message: $message\n
     ";
     $headers = "From: $email";
 

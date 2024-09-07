@@ -38,23 +38,27 @@
             <li><a href="../GameSection.html">Games</a></li>
         </ul>
     </nav>
-    <ol>
-        <li><a href="#A1SPINARHYME">A 1: SPIN A RHYME</a></li>
-        <li><a href="#A2DOWERHYME">A 2: DO WE RHYME?</a></li>
-        <li><a href="#A3DOYOUHEARWHATIHEAR">A 3: DO YOU HEAR WHAT I HEAR?</a></li>
-        <li><a href="#A4TREASUREHUNT">A 4: TREASURE HUNT</a></li>
-        <li><a href="#A5SUBMARINEGAME">A 5: SUBMARINE GAME</a></li>
-        <li><a href="#A6SPINAPIN">A 6: SPIN A PIN</a></li>
-        <li><a href="#A7LETTERSOUNDS">A 7: LETTER SOUNDS</a></li>
-        <li><a href="#A8ACTIVITIESFORDEVELOPINGAUDITORYMEMORY">A 8: ACTIVITIES FOR DEVELOPING AUDITORY MEMORY</a></li>
-        <li><a href="#A9SHAPESANDSIZES">A 9: SHAPES AND SIZES</a></li>
-        <li><a href="#A10SACKOFDIRECTIONS">A 10: SACK OF DIRECTIONS</a></li>
-        <li><a href="#A11NOSETONOSE">A 11: NOSE TO NOSE</a></li>
-        <li><a href="#A12DEVELOPINGSPATIALRELATIONSHIPS">A 12: DEVELOPING SPATIAL RELATIONSHIPS</a></li>
-        <li><a href="#A13WORDENDINGFAMILIES">A 13: WORD ENDING FAMILIES</a></li>
-        <li><a href="#A14RHYMINGPUZZLECARDS">A 14: RHYMING PUZZLE CARDS</a></li>
-        <li><a href="#A15SPELLIT">A 15: SPELL IT</a></li>
-    </ol>
+    <button type="button" class="collapsible">List of games</button>
+    <div class="outerContent">
+        <ol>
+            <li><a href="#A1SPINARHYME">A 1: SPIN A RHYME</a></li>
+            <li><a href="#A2DOWERHYME">A 2: DO WE RHYME?</a></li>
+            <li><a href="#A3DOYOUHEARWHATIHEAR">A 3: DO YOU HEAR WHAT I HEAR?</a></li>
+            <li><a href="#A4TREASUREHUNT">A 4: TREASURE HUNT</a></li>
+            <li><a href="#A5SUBMARINEGAME">A 5: SUBMARINE GAME</a></li>
+            <li><a href="#A6SPINAPIN">A 6: SPIN A PIN</a></li>
+            <li><a href="#A7LETTERSOUNDS">A 7: LETTER SOUNDS</a></li>
+            <li><a href="#A8ACTIVITIESFORDEVELOPINGAUDITORYMEMORY">A 8: ACTIVITIES FOR DEVELOPING AUDITORY MEMORY</a>
+            </li>
+            <li><a href="#A9SHAPESANDSIZES">A 9: SHAPES AND SIZES</a></li>
+            <li><a href="#A10SACKOFDIRECTIONS">A 10: SACK OF DIRECTIONS</a></li>
+            <li><a href="#A11NOSETONOSE">A 11: NOSE TO NOSE</a></li>
+            <li><a href="#A12DEVELOPINGSPATIALRELATIONSHIPS">A 12: DEVELOPING SPATIAL RELATIONSHIPS</a></li>
+            <li><a href="#A13WORDENDINGFAMILIES">A 13: WORD ENDING FAMILIES</a></li>
+            <li><a href="#A14RHYMINGPUZZLECARDS">A 14: RHYMING PUZZLE CARDS</a></li>
+            <li><a href="#A15SPELLIT">A 15: SPELL IT</a></li>
+        </ol>
+    </div>
     <section>
         <hr border: none height: 2px background-color: #333 />
         <article id="A1SPINARHYME" class="gamearticle">
@@ -4207,6 +4211,39 @@
         </article>
     </section>
     
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    </script>
+
+    <script>
+        var coll = document.getElementsByClassName("dropdown");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>

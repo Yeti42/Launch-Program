@@ -29,21 +29,24 @@
             <li><a href="../GameSection.html">Games</a></li>
         </ul>
     </nav>
-    <ol>
-        <li><a href="#V1DOMINOESSHAPESANDSIZES">V 1: DOMINOES- SHAPES AND SIZES</a></li>
-        <li><a href="#V2SCANFACES">V 2: SCAN FACES</a></li>
-        <li><a href="#V3PICTO">V 3: PICTO</a></li>
-        <li><a href="#V4ACTIVITIESFORDEVELOPINGVISUALMEMORY">V 4: ACTIVITIES FOR DEVELOPING VISUAL MEMORY</a></li>
-        <li><a href="#V5COPYMEMORYPACK">V 5: COPY MEMORY PACK</a></li>
-        <li><a href="#V6DICDACDOE">V 6: DIC DAC DOE</a></li>
-        <li><a href="#V7WEEKDAYS">V 7: WEEKDAYS</a></li>
-        <li><a href="#V8TOUCHTHESHAPE">V 8: TOUCH THE SHAPE</a></li>
-        <li><a href="#V9BANDDCONFUSION">V 9: B AND D CONFUSION</a></li>
-        <li><a href="#V10EYEMOVEMENTCHART">V 10: EYE MOVEMENT CHART</a></li>
-        <li><a href="#V11HAVEAHEART">V 11: HAVE A HEART</a></li>
-        <li><a href="#VisualDiscriminationandWritingbinalsoincludes">Visual Discrimination and Writing bin also
-                includes:</a></li>
-    </ol>
+    <button class="collapsible">List of games</button>
+    <div class="outerContent">
+        <ol>
+            <li><a href="#V1DOMINOESSHAPESANDSIZES">V 1: DOMINOES- SHAPES AND SIZES</a></li>
+            <li><a href="#V2SCANFACES">V 2: SCAN FACES</a></li>
+            <li><a href="#V3PICTO">V 3: PICTO</a></li>
+            <li><a href="#V4ACTIVITIESFORDEVELOPINGVISUALMEMORY">V 4: ACTIVITIES FOR DEVELOPING VISUAL MEMORY</a></li>
+            <li><a href="#V5COPYMEMORYPACK">V 5: COPY MEMORY PACK</a></li>
+            <li><a href="#V6DICDACDOE">V 6: DIC DAC DOE</a></li>
+            <li><a href="#V7WEEKDAYS">V 7: WEEKDAYS</a></li>
+            <li><a href="#V8TOUCHTHESHAPE">V 8: TOUCH THE SHAPE</a></li>
+            <li><a href="#V9BANDDCONFUSION">V 9: B AND D CONFUSION</a></li>
+            <li><a href="#V10EYEMOVEMENTCHART">V 10: EYE MOVEMENT CHART</a></li>
+            <li><a href="#V11HAVEAHEART">V 11: HAVE A HEART</a></li>
+            <li><a href="#VisualDiscriminationandWritingbinalsoincludes">Visual Discrimination and Writing bin also
+                    includes:</a></li>
+        </ol>
+    </div>
     <section>
         <hr border: none height: 2px background-color: #333 />
         <article id="V1DOMINOESSHAPESANDSIZES" class="gamearticle">
@@ -254,6 +257,24 @@
             <p>Sequencing Cards.</p>
         </article>
     </section>
+    
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    </script>
+
     <script>
         var coll = document.getElementsByClassName("dropdown");
         var i;

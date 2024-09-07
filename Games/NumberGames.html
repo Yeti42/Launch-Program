@@ -19,7 +19,8 @@
     <header>
         <h1>Launch Program</h1>
     </header>
-    <nav class="order">
+    <button class="dropdown">Menu</button>
+    <nav class="orderB">
         <ul class="menu">
             <li><a href="../index.html">Home</a></li>
             <li><a href="../Testimonials.html">Testimonials</a></li>
@@ -28,36 +29,39 @@
             <li><a href="../GameSection.html">Games</a></li>
         </ul>
     </nav>
-    <ul>
-        <li><a href="#N1RACKO">N 1: RACKO</a></li>
-        <li><a href="#N2CARS">N 2: CARS</a></li>
-        <li><a href="#N3ONYOURBACKDRILL">N 3: ON YOUR BACK DRILL</a></li>
-        <li><a href="#N4BASEBALL">N 4: BASEBALL</a></li>
-        <li><a href="#N5TEENSOLITAIRE">N 5: TEEN SOLITAIRE</a></li>
-        <li><a href="#N6BANG">N 6: BANG!</a></li>
-        <li><a href="#N7RACETRACK">N 7: RACE TRACK</a></li>
-        <li><a href="#N8LOTTO">N 8: LOTTO</a></li>
-        <li><a href="#N9NUMBERRHYMES">N 9: NUMBER RHYMES</a></li>
-        <li><a href="#N10CALENDARMATCHUP">N 10: CALENDAR MATCH-UP</a></li>
-        <li><a href="#N11LINEFIND">N 11: LINE FIND</a></li>
-        <li><a href="#N12FINDYOURNUMBER">N 12: FIND YOUR NUMBER</a></li>
-        <li><a href="#N13WAR">N 13: WAR</a></li>
-        <li><a href="#N14PASHAPASHA">N 14: PASHA-PASHA</a></li>
-        <li><a href="#N15QUEENOFSPADES">N 15: QUEEN OF SPADES</a></li>
-        <li><a href="#N16CALENDARTOSS">N 16: CALENDAR TOSS</a></li>
-        <li><a href="#N17CLIPTHENUMBER">N 17: CLIP THE NUMBER</a></li>
-        <li><a href="#N18NUMBERORLETTERBALL">N 18: NUMBER OR LETTER BALL</a></li>
-        <li><a href="#N19GRIDMATCHUP">N 19: GRID MATCH-UP</a></li>
-        <li><a href="#N20MUGGINS">N 20: MUGGINS</a></li>
-        <li><a href="#N21GREATERTHANPOPS">N 21: GREATER THAN POPS</a></li>
-        <li><a href="#N22PINGPONGTOSS">N 22: PING-PONG TOSS</a></li>
-        <li><a href="#N23TURTLEFAMILIESGAME">N 23: TURTLE FAMILIES GAME</a></li>
-        <li><a href="#N24FISHPOND">N 24: FISH POND</a></li>
-        <li><a href="#N25DISAPPEARINGNUMBERS">N 25: DISAPPEARING NUMBERS</a></li>
-        <li><a href="#N26CLOCKSOLITAIRE">N 26: CLOCK SOLITAIRE</a></li>
-        <li><a href="#N27CLOTHESPINSACTIVITY">N 27: CLOTHESPINS ACTIVITY</a></li>
-        <li><a href="#NBinalsoincludes">N Bin also includes:</a></li>
-    </ul>
+    <button class="collapsible">List of games</button>
+    <div class="outerContent">
+        <ul>
+            <li><a href="#N1RACKO">N 1: RACKO</a></li>
+            <li><a href="#N2CARS">N 2: CARS</a></li>
+            <li><a href="#N3ONYOURBACKDRILL">N 3: ON YOUR BACK DRILL</a></li>
+            <li><a href="#N4BASEBALL">N 4: BASEBALL</a></li>
+            <li><a href="#N5TEENSOLITAIRE">N 5: TEEN SOLITAIRE</a></li>
+            <li><a href="#N6BANG">N 6: BANG!</a></li>
+            <li><a href="#N7RACETRACK">N 7: RACE TRACK</a></li>
+            <li><a href="#N8LOTTO">N 8: LOTTO</a></li>
+            <li><a href="#N9NUMBERRHYMES">N 9: NUMBER RHYMES</a></li>
+            <li><a href="#N10CALENDARMATCHUP">N 10: CALENDAR MATCH-UP</a></li>
+            <li><a href="#N11LINEFIND">N 11: LINE FIND</a></li>
+            <li><a href="#N12FINDYOURNUMBER">N 12: FIND YOUR NUMBER</a></li>
+            <li><a href="#N13WAR">N 13: WAR</a></li>
+            <li><a href="#N14PASHAPASHA">N 14: PASHA-PASHA</a></li>
+            <li><a href="#N15QUEENOFSPADES">N 15: QUEEN OF SPADES</a></li>
+            <li><a href="#N16CALENDARTOSS">N 16: CALENDAR TOSS</a></li>
+            <li><a href="#N17CLIPTHENUMBER">N 17: CLIP THE NUMBER</a></li>
+            <li><a href="#N18NUMBERORLETTERBALL">N 18: NUMBER OR LETTER BALL</a></li>
+            <li><a href="#N19GRIDMATCHUP">N 19: GRID MATCH-UP</a></li>
+            <li><a href="#N20MUGGINS">N 20: MUGGINS</a></li>
+            <li><a href="#N21GREATERTHANPOPS">N 21: GREATER THAN POPS</a></li>
+            <li><a href="#N22PINGPONGTOSS">N 22: PING-PONG TOSS</a></li>
+            <li><a href="#N23TURTLEFAMILIESGAME">N 23: TURTLE FAMILIES GAME</a></li>
+            <li><a href="#N24FISHPOND">N 24: FISH POND</a></li>
+            <li><a href="#N25DISAPPEARINGNUMBERS">N 25: DISAPPEARING NUMBERS</a></li>
+            <li><a href="#N26CLOCKSOLITAIRE">N 26: CLOCK SOLITAIRE</a></li>
+            <li><a href="#N27CLOTHESPINSACTIVITY">N 27: CLOTHESPINS ACTIVITY</a></li>
+            <li><a href="#NBinalsoincludes">N Bin also includes:</a></li>
+        </ul>
+    </div>
     <section>
         <hr border: none height: 2px background-color: #333 />
         <article id="N1RACKO" class="gamearticle">
@@ -532,6 +536,38 @@
         </article>
     </section>
 
-</body>
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    </script>
+
+    <script>
+        var coll = document.getElementsByClassName("dropdown");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    </script>
 
 </html>

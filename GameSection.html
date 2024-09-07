@@ -5,21 +5,22 @@
 	<title>Launch Program</title>
 	<style type="text/css"></style>
 	<link rel="stylesheet" href="layout.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
 	<header>
 		<h1>Games</h1>
 	</header>
-	<nav class="order">
+	<button class="dropdown">Menu</button>
+	<nav class="orderB">
 		<ul class="menu">
 			<li><a href="index.html">Home</a></li>
 			<li><a href="Testimonials.html">Testimonials</a></li>
 			<li><a href="contact.html">Contact Us</a></li>
 			<li><a href="Manual.html">Manual</a></li>
-			<li class="clicked">Games</li>
+			<li><a href="GameSection.html">Games</a></li>
 		</ul>
 	</nav>
 
@@ -140,30 +141,30 @@
 		<li><a href="Games/FineMotorSkillsGames.html#AuditoryFineMotorOralExpressionbinalsoincludes">Auditory/Fine Motor/Oral Expression bin also includes:</a></li>
 	</div><br>
 
-	A GUIDE TO THE SUPPLEMENTAL GAMES & ACTIVITIES
-	Word Work Folder Games
-	Roll and Write
-	Word Family Flip Books
-	Touch & Read Phonics
-	The Fidget Game
-	The I-Spy Game
-	Rhyme & Sort Rockets
-	Rhyming Pups
-	Launch and Learn Beginning Sounds
-	Snap & Build Phonics
-	Splash
-	Power Pen
-	Blends & Digraphs Teaching Tubs
-	I Can Build Simple Words Activity Box
-	GAME SELECTION IDEAS
-	What Games Can I Use for Beginning Sounds?
-	What Games Can I Use for Blends & Digraphs?
-	What Games Can I Use for CVC Words?
-	What Games Can I Use for Sight Words?
-	What Games Can I Use for Rhyming?
-	What Games Can I Use for Writing and Fine Motor Skills?
-	What Games Can I Use for Numbers in the Teens?
-</article>
+		A GUIDE TO THE SUPPLEMENTAL GAMES & ACTIVITIES
+		Word Work Folder Games
+		Roll and Write
+		Word Family Flip Books
+		Touch & Read Phonics
+		The Fidget Game
+		The I-Spy Game
+		Rhyme & Sort Rockets
+		Rhyming Pups
+		Launch and Learn Beginning Sounds
+		Snap & Build Phonics
+		Splash
+		Power Pen
+		Blends & Digraphs Teaching Tubs
+		I Can Build Simple Words Activity Box
+		GAME SELECTION IDEAS
+		What Games Can I Use for Beginning Sounds?
+		What Games Can I Use for Blends & Digraphs?
+		What Games Can I Use for CVC Words?
+		What Games Can I Use for Sight Words?
+		What Games Can I Use for Rhyming?
+		What Games Can I Use for Writing and Fine Motor Skills?
+		What Games Can I Use for Numbers in the Teens?
+	</article>
 
 	<script>
 		var coll = document.getElementsByClassName("collapsible");
@@ -181,7 +182,22 @@
 			});
 		}
 	</script>
+	<script>
+		var coll = document.getElementsByClassName("dropdown");
+		var i;
 
+		for (i = 0; i < coll.length; i++) {
+			coll[i].addEventListener("click", function () {
+				this.classList.toggle("active");
+				var content = this.nextElementSibling;
+				if (content.style.display === "block") {
+					content.style.display = "none";
+				} else {
+					content.style.display = "block";
+				}
+			});
+		}
+	</script>
 </body>
 
 </html>

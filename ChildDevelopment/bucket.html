@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Launch Program</title>
+    <style type="text/css"></style>
+    <link rel="stylesheet" href="../layout.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <header>
+        <h1>The Launch<br>Tutor Bucket</h1>
+    </header>
+    <button class="dropdown">Menu</button>
+    <nav class="orderB">
+        <ul class="menu">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../Testimonials.html">Testimonials</a></li>
+            <li><a href="../contact.html">Contact Us</a></li>
+            <li><a href="../Manual.html">Manual</a></li>
+            <li><a href="../GameSection.html">Games</a></li>
+        </ul>
+    </nav>
+    <section>
+        <article>
+            You will carry your launch bucket to every tutoring session. It should contain the following items:
+            <ul>
+                <li>Small whiteboard — for writing practice and whiteboard eraser.</li>
+                <li>Dry erase markers, for use with whiteboard.</li>
+                <li>"Magic" Slate for practicing handwriting.</li>
+                <li>Set of vis-à-vis markers (wet erase) — use these for writing on laminated surfaces, for example LRS
+                    1 Climb the Ladder; LRS 14 Catch a Bee etc.</li>
+                <li>Deck of cards — for use with number games and activities</li>
+                <li>Alphabet tile pouch — can be used with many of the LRS games; making words etc.</li>
+                <li>Glue stick — for collage activities.</li>
+                <li>Crayons.</li>
+                <li>Dishrag- for wiping gameboards after use.</li>
+                <li>Hand sanitizer.</li>
+                <li>Scissors — for collage and other fine motor activities</li>
+                <li>Post-it notes.</li>
+                <li>Timer — for monitoring time of session.</li>
+                <li>1 -100 number chart.</li>
+                <li>Color coding labels, for use with Shake the Bean, Ping Pong Toss etc.</li>
+                <li>Dice.</li>
+                <li>Deck of Alphabet Cards - can be used for letter & sound recognition, vocabulary work; use with LRS
+                    15 Slapjack etc.</li>
+            </ul>
+            Please contact the Launch Program Coordinator if any items are missing/need replacing.
+        </article>
+    </section>
+    <script>
+        var coll = document.getElementsByClassName("dropdown");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

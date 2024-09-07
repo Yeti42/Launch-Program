@@ -1,7 +1,12 @@
-header {
+header h1{
   text-align: center;
   display: flex;
   justify-content: center;
+  text-shadow: 2px 2px white;
+}
+
+body {
+  background-image: url('images/background.png');
 }
 
 .order {
@@ -9,32 +14,68 @@ header {
   justify-content: center;
 }
 
+.dropdown {
+  position: fixed;
+  right: 2%;
+  top: 2%;
+  border: 2px solid rgb(0, 0, 0);
+  background-color: rgb(173, 216, 230);
+}
+
+/* Dropdown menu */
+.orderB {
+  display: none;
+  position: fixed;
+  /* Align to the right of the button */
+  right: 0;
+  background-color: rgb(249, 249, 249);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  /* Ensure this is below the button */
+  z-index: 0;
+  border-radius: 5px;
+}
+
 ul.menu li {
-  display: inline;
+  display: block;
   font-size: 20px;
   margin: 18px;
   border: 2px solid rgb(0, 0, 0);
   border-radius: 5px;
-  background-color: rgba(0, 128, 0, 0.253);
-  padding: 2px;
+  background-color: rgb(44, 241, 44);
+  padding: 10px;
   text-align: center;
+}
+
+ul.menu {
+  padding: 0;
+  margin: 0;
+}
+
+.order ul.menu li {
+  display: inline;
+  padding: 2px;
+}
+
+.order ul.menu {
+  margin: 10px;
 }
 
 /* Change color of the menu links when hovered over */
 ul.menu li:hover:not(.clicked) {
-  background-color: rgba(0, 0, 255, 0.267);
+  background-color: rgb(158, 158, 253);
 }
 
 /* Thinner screen sizes */
 @media (max-width: 600px) {
-  ul.menu li {
+  .order ul.menu li {
     display: block;
     font-size: 18px;
     margin: 10px 0;
     padding: 10px;
   }
 
-  ul.menu {
+  .order ul.menu {
     padding: 0;
     margin: 0;
   }
@@ -48,31 +89,46 @@ ul.menu li:hover:not(.clicked) {
   background-color: #f1f1f1;
 }
 
+.outerContent {
+  padding: 0 18px;
+  font-size: 22px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 5px;
+}
+
+a {
+  color: blue;
+}
+
 section {
   font-size: 22px;
 }
 
-.gamearticle {
+/* .gamearticle {
   background-color: rgba(0, 0, 255, 0.226);
-}
+} */
 
 article {
   border: 2px solid rgb(0, 0, 0);
   border-radius: 5px;
   padding: 2%;
   margin-bottom: 6px;
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
 button {
   border: 2px solid yellow;
   border-radius: 2px;
-  background-color: rgba(0, 0, 255, 0.301);
+  background-color: rgb(117, 117, 204);
   margin: 3px;
   font-size: 22px;
 }
 
 /* Change color of the buttons when hovered over */
-button:hover{
+button:hover {
   background-color: gray;
 }
 

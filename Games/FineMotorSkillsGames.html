@@ -19,7 +19,8 @@
     <header>
         <h1>Launch Program</h1>
     </header>
-    <nav class="order">
+    <button class="dropdown">Menu</button>
+    <nav class="orderB">
         <ul class="menu">
             <li><a href="../index.html">Home</a></li>
             <li><a href="../Testimonials.html">Testimonials</a></li>
@@ -28,15 +29,18 @@
             <li><a href="../GameSection.html">Games</a></li>
         </ul>
     </nav>
-    <ol>
-        <li><a href="#FM1CLOTHESPINACTIVITY">FM 1: CLOTHESPIN ACTIVITY</a></li>
-        <li><a href="#FM2RANDOMDOTTODOTS">FM 2: RANDOM DOT TO DOTS</a></li>
-        <li><a href="#FM3TRACEALETTER">FM 3: TRACE A LETTER</a></li>
-        <li><a href="#FM4SANDTRAY">FM 4: SAND TRAY</a></li>
-        <li><a href="#FM5DOTTODOTWITHARROWS">FM 5: DOT TO DOT WITH ARROWS</a></li>
-        <li><a href="#AuditoryFineMotorOralExpressionbinalsoincludes">Auditory/Fine Motor/Oral Expression bin also
-                includes:</a></li>
-    </ol>
+    <button class="collapsible">List of games</button>
+    <div class="outerContent">
+        <ol>
+            <li><a href="#FM1CLOTHESPINACTIVITY">FM 1: CLOTHESPIN ACTIVITY</a></li>
+            <li><a href="#FM2RANDOMDOTTODOTS">FM 2: RANDOM DOT TO DOTS</a></li>
+            <li><a href="#FM3TRACEALETTER">FM 3: TRACE A LETTER</a></li>
+            <li><a href="#FM4SANDTRAY">FM 4: SAND TRAY</a></li>
+            <li><a href="#FM5DOTTODOTWITHARROWS">FM 5: DOT TO DOT WITH ARROWS</a></li>
+            <li><a href="#AuditoryFineMotorOralExpressionbinalsoincludes">Auditory/Fine Motor/Oral Expression bin also
+                    includes:</a></li>
+        </ol>
+    </div>
     <section>
         <hr border: none height: 2px background-color: #333 />
         <article id="FM1CLOTHESPINACTIVITY" class="gamearticle">
@@ -126,7 +130,39 @@
             <br>
         </article>
     </section>
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
 
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    </script>
+
+    <script>
+        var coll = document.getElementsByClassName("dropdown");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>

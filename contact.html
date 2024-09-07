@@ -9,7 +9,7 @@
             margin: 50px auto;
             background: rgb(255, 255, 255);
             padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
         }
         label {
             display: block;
@@ -34,16 +34,16 @@
     <header>
         <h1>Contact Us</h1>
     </header>
-    <nav class="order">
+    <button class="dropdown">Menu</button>
+    <nav class="orderB">
         <ul class="menu">
             <li><a href="index.html">Home</a></li>
             <li><a href="Testimonials.html">Testimonials</a></li>
-            <li class="clicked">Contact Us</li>
+            <li><a href="contact.html">Contact Us</a></li>
             <li><a href="Manual.html">Manual</a></li>
             <li><a href="GameSection.html">Games</a></li>
         </ul>
     </nav>
-
     <div class = "form">
         <h1>Volunteer Application Form</h1>
         
@@ -55,20 +55,30 @@
             <input type="email" id="email" name="email" required>
             
             <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="phone" required>
+            <input type="tel" id="phone" name="phone">
             
-            <label for="availability">Availability:</label>
-            <textarea id="availability" name="availability" rows="4" required></textarea>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
             
-            <label for="interests">Areas of Interest:</label>
-            <textarea id="interests" name="interests" rows="4" required></textarea>
-            
-            <label for="experience">Previous Volunteer Experience:</label>
-            <textarea id="experience" name="experience" rows="4" required></textarea>
-            
-            <!-- <button type="submit">Submit Application</button> -->
+            <button type="submit">Submit Application</button>
         </form>
     </div>
+    <script>
+        var coll = document.getElementsByClassName("dropdown");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>

@@ -20,6 +20,7 @@ body {
   top: 2%;
   border: 2px solid rgb(0, 0, 0);
   background-color: rgb(173, 216, 230);
+  text-align: center;
 }
 
 /* Dropdown menu */
@@ -125,6 +126,7 @@ button {
   background-color: rgb(173, 216, 230);
   margin: 3px;
   font-size: 22px;
+  text-align: left;
 }
 
 /* Change color of the buttons when hovered over */

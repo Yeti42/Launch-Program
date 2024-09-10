@@ -2,7 +2,12 @@ header h1{
   text-align: center;
   display: flex;
   justify-content: center;
-  text-shadow: 2px 2px white;
+  /* text-shadow: 2px 2px white; */
+  text-shadow: 
+  -2px -2px 0 white,  
+   2px -2px 0 white,
+  -2px  2px 0 white,
+   2px  2px 0 white;
 }
 
 body {

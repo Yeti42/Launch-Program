@@ -2,7 +2,12 @@ header h1{
   text-align: center;
   display: flex;
   justify-content: center;
-  text-shadow: 2px 2px white;
+  /* text-shadow: 2px 2px white; */
+  text-shadow: 
+  -2px -2px 0 white,  
+   2px -2px 0 white,
+  -2px  2px 0 white,
+   2px  2px 0 white;
 }
 
 body {
@@ -20,6 +25,7 @@ body {
   top: 2%;
   border: 2px solid rgb(0, 0, 0);
   background-color: rgb(173, 216, 230);
+  text-align: center;
 }
 
 /* Dropdown menu */
@@ -42,7 +48,7 @@ ul.menu li {
   margin: 18px;
   border: 2px solid rgb(0, 0, 0);
   border-radius: 5px;
-  background-color: rgb(44, 241, 44);
+  background-color: rgb(255, 179, 39);
   padding: 10px;
   text-align: center;
 }
@@ -92,7 +98,6 @@ ul.menu li:hover:not(.clicked) {
 .outerContent {
   padding: 0 18px;
   font-size: 22px;
-  display: none;
   overflow: hidden;
   background-color: #f1f1f1;
   border: 2px solid rgb(0, 0, 0);
@@ -125,6 +130,7 @@ button {
   background-color: rgb(173, 216, 230);
   margin: 3px;
   font-size: 22px;
+  text-align: left;
 }
 
 /* Change color of the buttons when hovered over */

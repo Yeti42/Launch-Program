@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = htmlspecialchars($_POST['message']);
 
     // Email details
-    $to = "dave@stevens-home.com";
+    $to = "waterfallsue1@gmail.com";
     $subject = "New Volunteer Application from $name";
     $message = "
     Name: $name\n

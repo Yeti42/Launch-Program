@@ -7,20 +7,24 @@
         .form {
             width: 60%;
             margin: 50px auto;
-            background: rgb(255, 255, 255);
+            /* background: rgb(255, 255, 255); */
             padding: 20px;
             /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
         }
+
         label {
             display: block;
             margin: 10px 0 5px;
         }
-        input, textarea {
+
+        input,
+        textarea {
             width: 98%;
             padding: 10px;
             border: 1px, solid rgba(192, 192, 192, 0.855);
             border-radius: 5px;
         }
+
         h1 {
             text-align: center;
         }
@@ -44,25 +48,35 @@
             <li><a href="contact.html">Contact Us</a></li>
         </ul>
     </nav>
-    <div class = "form">
-        <h1>Volunteer Application Form</h1>
-        
-        <form action="submit_form.php" method="post">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            
-            <label for="email">Email Address:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="phone">
-            
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-            
-            <button type="submit">Send</button>
-        </form>
-    </div>
+    <section>
+        <article>
+            <div class="form">
+                <h1>Volunteer Application Form</h1>
+
+                <form action="submit_form.php" method="post">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone">
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </article>
+        <article>
+            <h3>Contact information</h3>
+            Email: waterfallsue1@gmail.com
+            Name: Sue
+            School: Blackwell Elementary
+        </article>
+    </section>
     <script>
         var coll = document.getElementsByClassName("dropdown");
         var i;

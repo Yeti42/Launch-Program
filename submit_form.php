@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Email details
     $to = "waterfallsue1@gmail.com";
-    $subject = "New Volunteer Application from $name";
+    $subject = "Question about Launch from $name";
     $message = "
     Name: $name\n
     Email: $email\n
@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (mail($to, $subject, $message, $headers)) {
         echo "Thank you, $name. We will get back to you soon.";
     } else {
-        echo "Sorry, there was an error sending your application. Please try again later.";
+        echo "Sorry, there was an error sending your inquiry. Please try again later.";
     }
     echo ("\n<a href='contact.html'>Return</a>");
 } else {

@@ -3,82 +3,92 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tic Tac Toe</title>
-  <style>
-    body {
-      max-width: 70%;
-      margin-left: 30%;
-      margin-right: 30%;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="../../layout.css">
+    <style>
+        body {
+            max-width: 70%;
+            margin-left: 30%;
+            margin-right: 30%;
+        }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 100px);
-      grid-template-rows: repeat(3, 100px);
-      gap: 5px;
-    }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(3, 100px);
+            gap: 5px;
+        }
 
-    .cell {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 5px solid #000;
-      border-radius: 10%;
-      font-size: 40px;
-      cursor: pointer;
-    }
+        .cell {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 5px solid #000;
+            border-radius: 10%;
+            font-size: 40px;
+            cursor: pointer;
+        }
 
-    button {
-      font-size: 30px;
-      align-items: center;
-      justify-content: center;
-      margin: 10px;
-      margin-left: 0px;
-    }
+        button {
+            font-size: 30px;
+            align-items: center;
+            justify-content: center;
+            margin: 10px;
+            margin-left: 0px;
+        }
 
-    /* Styling/highlighting the winning cells */
-    .winning-cell {
-      background-color: yellow;
-      position: relative;
-    }
+        /* Styling/highlighting the winning cells */
+        .winning-cell {
+            background-color: yellow;
+            position: relative;
+        }
 
-    #reload {
-      margin-top: 10px;
-    }
-  </style>
+        #reload {
+            margin-top: 10px;
+        }
+
+        a {
+            color: #000;
+            text-decoration: none;
+        }
+    </style>
 </head>
 
 <body>
-  <h1 class="head" id="head">Select the letters to play with</h1>
+    <button class="dropdown"><a href="../VisualDiscriminationGames.html#V6DICDACDOE">Return</a></button>
+    <article>
+        <h1 class="head" id="head">Select the letters to play with</h1>
 
-  <!-- Buttons for starting the game -->
-  <div class="buttons" id="letters">
-    <button onclick="letterSelect('bd')">b d</button>
-    <button onclick="letterSelect('pq')">p q</button>
-    <button onclick="letterSelect('IJ')">I J</button>
-    <button onclick="letterSelect('XO')">X O</button>
-  </div>
-  <div class="buttons" id="Select_character" style="display: none;">
-    <button class="charSelect" id="X" onclick="characterSelect(1)"></button>
-    <button class="charSelect" id="O" onclick="characterSelect(2)"></button>
-  </div>
-  <div class="buttons" id="playfirst" style="display: none;">
-    <button id="player" onclick="play('player')">I play first</button>
-    <button id="computer" onclick="play('computer')">Computer plays first</button>
-  </div>
+        <!-- Buttons for starting the game -->
+        <div class="buttons" id="letters">
+            <button onclick="letterSelect('bd')">b d</button>
+            <button onclick="letterSelect('pq')">p q</button>
+            <button onclick="letterSelect('IJ')">I J</button>
+            <button onclick="letterSelect('XO')">X O</button>
+        </div>
+        <div class="buttons" id="Select_character" style="display: none;">
+            <button class="charSelect" id="X" onclick="characterSelect(1)"></button>
+            <button class="charSelect" id="O" onclick="characterSelect(2)"></button>
+        </div>
+        <div class="buttons" id="playfirst" style="display: none;">
+            <button id="player" onclick="play('player')">I play first</button>
+            <button id="computer" onclick="play('computer')">Computer plays first</button>
+        </div>
 
-  <!-- This holds the play grid, when it gets loaded -->
-  <div class="grid" id="grid"></div>
+        <!-- This holds the play grid, when it gets loaded -->
+        <div class="grid" id="grid"></div>
 
-  <!-- The restart button, becomes visible when the game is over -->
-  <button id="reload" onclick="location.reload()" style="display: none;">Restart the game</button>
+        <!-- The restart button, becomes visible when the game is over -->
+        <button id="reload" onclick="location.reload()" style="display: none;">Restart the game</button>
 
-  <!-- Scripts for the game -->
-  <script src="grid.js"></script>
-  <script src="text.js"></script>
+        <!-- Scripts for the game -->
+        <script src="grid.js"></script>
+        <script src="text.js"></script>
+    </article>
 </body>
 
 </html>

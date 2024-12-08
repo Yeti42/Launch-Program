@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find your number</title>
+    <link rel="stylesheet" href="../../layout.css">
+    <style>
+        table {
+            font-size: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="dropdown"><a href="../NumberGames.html#N12">Return</a></button>
+    <article>
+        <h1 class="head" id="headtext">Click the dice to roll</h1>
+        <img id="dice" src="../images/dice1.png" alt="NumberDice" onclick="roll()">
+        <table>
+            <tr>
+                <td onclick="numberPick(1)">1</td>
+                <td onclick="numberPick(2)">2</td>
+                <td onclick="numberPick(3)">3</td>
+            </tr>
+            <tr>
+                <td onclick="numberPick(4)">4</td>
+                <td onclick="numberPick(5)">5</td>
+                <td onclick="numberPick(6)">6</td>
+            </tr>
+        </table>
+        <h2 id="score">Nothing</h2>
+    </article>
+    <script src="FindNumber.js"></script>
+</body>
+
+</html>

@@ -28,19 +28,24 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
-            display: none; /* Hidden by default */
+            background-color: rgba(0, 0, 0, 0.8);
+            /* Semi-transparent background */
+            display: none;
+            /* Hidden by default */
             justify-content: center;
             align-items: center;
-            z-index: 1000; /* Makes sure it is above other elements */
+            z-index: 1000;
+            /* Makes sure it is above other elements */
         }
     </style>
 </head>
 
 <body>
     <button class="dropdown"><a href="../NumberGames.html#N12">Return</a></button>
-    <img id="yes" src="../images/thumbsup.png">
-    <img id="no" src="../images/thumbsdown.png">
+    <div class="overlay">
+        <img id="yes" src="../images/thumbsup.png">
+        <img id="no" src="../images/thumbsdown.png">
+    </div>
     <article>
         <h1 id="head">Holder</h1>
         <table>

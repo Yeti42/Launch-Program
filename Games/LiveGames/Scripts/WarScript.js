@@ -39,11 +39,29 @@ function processCards(cardCheck) {
             case 1:
                 p1Deck.push(card1);
                 p1Deck.push(card2);
+                if (wasEqual) {
+                    war1.forEach(num => {
+                        p1Deck.push(num);
+                    });
+                    war2.forEach(num => {
+                        p1Deck.push(num);
+                    });
+                    wasEqual = false;
+                }
                 break;
 
             case 2:
                 p2Deck.push(card2);
                 p2Deck.push(card1);
+                if (wasEqual) {
+                    war1.forEach(num => {
+                        p1Deck.push(num);
+                    });
+                    war2.forEach(num => {
+                        p1Deck.push(num);
+                    });
+                    wasEqual = false;
+                }
                 break;
 
             case 3:

@@ -13,4 +13,16 @@ function draw() {
 
     const text1 = document.getElementById("p1");
     const text2 = document.getElementById("p2");
+    const headText = document.getElementById("head");
+
+    text1.textContent = card1;
+    text2.textContent = card2;
+
+    if (card1 > card2) {
+        headText.textContent = "Player has the higher card!";
+    } else if (card1 < card2) {
+        headText.textContent = "Computer has the higher card!";
+    } else if (card1 === card2) {
+        headText.textContent = "Cards are equal!";
+    }
 }

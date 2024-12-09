@@ -115,7 +115,4 @@ function handleWarWin(winner) {
 function endGame(message) {
     const headText = document.getElementById("head");
     headText.textContent = message;
-
-    // Disable further interaction
-    document.getElementById("drawButton").disabled = true;
 }

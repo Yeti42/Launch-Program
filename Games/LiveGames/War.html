@@ -7,12 +7,15 @@
     <title>War number game</title>
     <link rel="stylesheet" href="../../layout.css">
     <style>
-        td {
+        table {
             font-size: 40px;
+        }
+
+        td {
             padding: 20px;
             text-align: center;
         }
-        
+
         th {
             font-size: 40px;
             padding: 10px;
@@ -21,19 +24,24 @@
 </head>
 
 <body>
+    <button class="dropdown"><a href="../NumberGames.html#N12">Return</a></button>
     <article>
         <h1 id="head">Holder</h1>
         <table>
             <tr>
-                <th>Player 1</th>
-                <th>Player 2</th>
+                <th></th>
+                <th>Player</th>
+                <th>Computer</th>
             </tr>
             <tr>
-                <td id="p1">1</td>
+                <td>Card</td>
+                <td id="p1" onclick="draw()">1</td>
                 <td id="p2">2</td>
             </tr>
         </table>
     </article>
+
+    <script src="Scripts/WarScript.js"></script>
 </body>
 
 </html>

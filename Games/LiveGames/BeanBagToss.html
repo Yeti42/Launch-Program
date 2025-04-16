@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bean Bag toss</title>
+    <link rel="stylesheet" href="../../layout.css">
+    <style>
+        td {
+            align-items: center;
+            justify-content: center;
+            border: 5px solid #000;
+            border-radius: 10%;
+            font-size: 40px;
+            padding: 40px;
+        }
+        input {
+            font-size: 22px;
+        }
+        div{
+            font-size: 22px;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="dropdown"><a href="../LetterRecognitionGames.html#LRS10">Return</a></button>
+    <article>
+        <table>
+            <tr>
+                <td id=1 onclick="pick(1)">gr</td>
+                <td id=2 onclick="pick(2)">d</td>
+                <td id=3 onclick="pick(3)">sn</td>
+            </tr>
+            <tr>
+                <td id=4 onclick="pick(4)">sk</td>
+                <td id=5 onclick="pick(5)">tw</td>
+                <td id=6 onclick="pick(6)">st</td>
+            </tr>
+            <tr>
+                <td id=7 onclick="pick(7)">fl</td>
+                <td id=8 onclick="pick(8)">sp</td>
+                <td id=9 onclick="pick(9)">sw</td>
+            </tr>
+        </table>
+        <button onclick="toss()">Toss the bean bag!</button>
+
+        <br>
+        <input id="wordInput" type="text" placeholder="Write your word here">
+        <button onclick="checkWord()">Submit word</button>
+
+        <br>
+        <div id="isCorrect">Press the toss button and select a word</div>
+
+    </article>
+
+    <script src="Scripts/BeanBagToss.js"></script>
+</body>
+
+</html>

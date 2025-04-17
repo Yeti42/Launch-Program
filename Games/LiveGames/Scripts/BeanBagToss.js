@@ -10,6 +10,8 @@ function toss() {
     console.log(selectedCell);
     landed = document.getElementById(selectedCell);
     landed.style.backgroundColor = 'rgb(158, 158, 253)';
+    const wordInput = document.getElementById('wordInput');
+    wordInput.value = "";
 }
 
 async function checkWord() {

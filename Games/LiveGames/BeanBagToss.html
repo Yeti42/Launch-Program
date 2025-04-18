@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,10 +15,12 @@
             font-size: 40px;
             padding: 40px;
         }
+
         input {
             font-size: 22px;
         }
-        div{
+
+        div {
             font-size: 22px;
         }
     </style>
@@ -48,8 +49,10 @@
         <button onclick="toss()">Toss the bean bag!</button>
 
         <br>
-        <input id="wordInput" type="text" placeholder="Write your word here">
+        <input id="wordInput" type="text" placeholder="Write your word here" autocorrect="off" autocomplete="off"
+            autocapitalize="off" spellcheck="false">
         <button onclick="checkWord()">Submit word</button>
+        <button onclick="startListening()">Speak &#127908</button>
 
         <br>
         <div id="isCorrect">Press the toss button and select a word</div>

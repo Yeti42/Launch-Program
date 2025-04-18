@@ -1,7 +1,11 @@
 landed = null;
 const correctText = document.getElementById("isCorrect");
+var tossed = false;
 
 function toss() {
+    if (tossed) {
+        return;
+    }
     for (let i = 1; i < 10; i++) {
         const cell = document.getElementById(i);
         cell.style.backgroundColor = '';
@@ -10,8 +14,13 @@ function toss() {
     console.log(selectedCell);
     landed = document.getElementById(selectedCell);
     landed.style.backgroundColor = 'rgb(158, 158, 253)';
+
     const wordInput = document.getElementById('wordInput');
     wordInput.value = "";
+
+    correctText.textContent = `Input a word starting with ${landed.textContent}`;
+
+    tossed = true;
 }
 
 async function checkWord() {
@@ -31,6 +40,8 @@ async function checkWord() {
         console.log("Incorrect (doesn't start with the right letters)");
         correctText.textContent = `Incorrect, that word doesn't start with the right letters (${pre})`
     }
+
+    tossed = false;
 }
 
 async function isRealWord(word) {
@@ -42,4 +53,38 @@ async function isRealWord(word) {
     }
 }
 
-  
+
+function startListening() {
+    // Use webkitSpeechRecognition for Chrome
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    if (!SpeechRecognition) {
+        alert("Speech recognition not supported in this browser.");
+        return;
+    }
+
+    // Set the language
+    const recognition = new SpeechRecognition();
+    recognition.lang = 'en-US';
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 1;
+
+    recognition.start(); // Start listening for speech
+
+    recognition.onresult = function (event) {
+        var transcript = event.results[0][0].transcript.toLowerCase().trim();
+
+        transcript = transcript.replace(/[.,!?]$/, ''); // Remove trailing period if it exists
+
+        document.getElementById('wordInput').value = transcript; // Input whatever was said
+
+        console.log("Recognized:", transcript);
+        checkWord();
+    };
+
+    recognition.onerror = function (event) {
+        console.error("Speech recognition error:", event.error);
+    };
+}
+
+

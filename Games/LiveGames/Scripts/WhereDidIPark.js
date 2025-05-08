@@ -1,10 +1,23 @@
 var expectedLetter = 'a';
 const headText = document.getElementById("Head");
+const image = document.getElementById("draggable")
+
+function randomLetter() {
+    const letters = "abcdefghijklmnopqrstuvwxyz";
+    var randomIndex = Math.floor(Math.random() * letters.length);
+    expectedLetter = letters[randomIndex];
+    console.log(expectedLetter);
+    randomIndex++;
+    const imageID = "../images/WhereDidIPark/Car" + randomIndex + ".png";
+
+    image.src = imageID;
+}
 
 function isCorrect(letter) {
     if (letter == expectedLetter) {
         console.log("Correct");
         headText.textContent = "Correct!";
+        randomLetter();
     }
     else {
         console.log("Incorrect");

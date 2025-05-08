@@ -1,6 +1,8 @@
 var expectedLetter = 'a';
 const headText = document.getElementById("Head");
 const image = document.getElementById("draggable")
+var numberCorrect = 0;
+var numberIncorrect = 0;
 
 function randomLetter() {
     const letters = "abcdefghijklmnopqrstuvwxyz";
@@ -16,12 +18,15 @@ function randomLetter() {
 function isCorrect(letter) {
     if (letter == expectedLetter) {
         console.log("Correct");
-        headText.textContent = "Correct!";
+        numberCorrect++;
+        headText.textContent = "Correct! You have " + numberCorrect + " correct matches and " + numberIncorrect + " incorrect matches.";
         randomLetter();
     }
     else {
         console.log("Incorrect");
-        headText.textContent = "Incorrect";
+        numberIncorrect++;
+        headText.textContent = "Incorrect. You have " + numberCorrect + " correct matches and " + numberIncorrect + " incorrect matches.";
+        randomLetter();
     }
 }
 

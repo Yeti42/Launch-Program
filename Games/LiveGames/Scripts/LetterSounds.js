@@ -40,6 +40,8 @@ function speak() {
 }
 
 function NewWord() {
+    document.getElementById("WordInput").value = "";
+
     const coin = Math.random() < 0.5 ? true : false;
     if (coin) {
         const index = Math.floor(Math.random() * wordsStart.length);

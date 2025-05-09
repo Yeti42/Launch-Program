@@ -24,13 +24,31 @@
         #dice:hover {
             cursor: pointer;
         }
+
+        article {
+            font-size: 22px;
+        }
+
+        input {
+            font-size: 22px;
+        }
     </style>
 </head>
 
 <body>
     <button class="dropdown"><a href="../AuditoryProcessingGames.html#A7">Return</a></button>
     <article>
-        <button id="ButtonTest" onclick="speak('Test')">Test</button>
+
+        <form>
+            <input type="text" id="WordInput" name="answer" placeholder="Type the word you heard" required>
+            <button type="submit" name="response" value = "true" style="background-color: green; color: white;">Green</button>
+            <button type="submit" name="response" value = "false" style="background-color: red;">Red</button>
+        </form>
+        <br>
+        <p id="LetterText">No letter, get a word first</p>
+        <p id="WordHelp"><br></p>
+        <button id="SpeakButton" onclick="speak()">New Word</button>
+        <p id="Score">0 Correct and 0 Incorrect</p>
     </article>
 
     <script src="Scripts/LetterSounds.js"></script>

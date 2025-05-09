@@ -7,24 +7,6 @@
     <title>Letter Sounds</title>
     <link rel="stylesheet" href="../../layout.css">
     <style>
-        table {
-            font-size: 40px;
-        }
-
-        td {
-            padding: 20px;
-            text-align: center;
-        }
-        
-        td:hover {
-            background-color: rgb(158, 158, 253);
-            cursor: pointer;
-        }
-
-        #dice:hover {
-            cursor: pointer;
-        }
-
         article {
             font-size: 22px;
         }
@@ -41,8 +23,9 @@
 
         <form>
             <input type="text" id="WordInput" name="answer" placeholder="Type the word you heard" required>
-            <button type="submit" name="response" value = "true" style="background-color: green; color: white;">Green</button>
-            <button type="submit" name="response" value = "false" style="background-color: red;">Red</button>
+            <button type="submit" name="response" value="true"
+                style="background-color: green; color: white;">Front</button>
+            <button type="submit" name="response" value="false" style="background-color: red;">End</button>
         </form>
         <br>
         <p id="LetterText">No letter, get a word first</p>

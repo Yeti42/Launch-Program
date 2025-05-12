@@ -5,7 +5,7 @@ const wordsStart = [
     "bad", "bag", "ban", "bud", "bed", "bat", "bid", "big",
     "dog", "dab", "dot", "dig", "den", "dip", "dim",
     "tab", "ten", "tag", "tap", "tin", "tip", "tug", "top", "tub",
-    "pat", "pad", "pet", "pot", "pin", "put", "pop", "pan",
+    "pat", "pad", "pet", "pot", "pin", "put", "pan",
     "get", "gum", "got", "gas", "gap", "gad", "gab", "gig",
     "not", "net", "nap", "nip", "nut", "nod", "nan", "nab"
 ];

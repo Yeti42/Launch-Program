@@ -149,3 +149,7 @@ function speak() {
 		}, 3000);
 	}
 }
+
+function AllowNewWords(){
+	generated = false;
+}

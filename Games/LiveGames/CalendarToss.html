@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar Toss</title>
+    <link rel="stylesheet" href="../../layout.css">
+    <style>
+        table {
+            width: 90%;
+            max-width: 90%;
+            border-collapse: collapse;
+            table-layout: fixed;
+            font-family: 'century gothic';
+        }
+
+        td {
+            align-items: center;
+            justify-content: center;
+            border: 5px solid #000;
+            border-radius: 10%;
+            font-size: 40px;
+            padding: 2vw;
+            word-wrap: break-word;
+            text-align: center;
+            vertical-align: middle;
+            width: 33.33%;
+            box-sizing: border-box;
+        }
+
+        input {
+            font-size: 22px;
+        }
+
+        p {
+            font-size: 22px;
+        }
+    </style>
+</head>
+
+<body>
+    <article style="position: relative;">
+        <div id="loadButtons">
+            <button id="PlayerSelect1" onclick="single(true)">Single Player</button>
+            <button id="PlayerSelect2" onclick="single(false)">Two Players</button>
+        </div>
+        <div id="calendar" style="display: none;">
+            <table cellspacing="0" cellpadding="8">
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td id="day-1">1</td>
+                    <td id="day-2">2</td>
+                    <td id="day-3">3</td>
+                    <td id="day-4">4</td>
+                    <td id="day-5">5</td>
+                </tr>
+                <tr>
+                    <td id="day-6">6</td>
+                    <td id="day-7">7</td>
+                    <td id="day-8">8</td>
+                    <td id="day-9">9</td>
+                    <td id="day-10">10</td>
+                    <td id="day-11">11</td>
+                    <td id="day-12">12</td>
+                </tr>
+                <tr>
+                    <td id="day-13">13</td>
+                    <td id="day-14">14</td>
+                    <td id="day-15">15</td>
+                    <td id="day-16">16</td>
+                    <td id="day-17">17</td>
+                    <td id="day-18">18</td>
+                    <td id="day-19">19</td>
+                </tr>
+                <tr>
+                    <td id="day-20">20</td>
+                    <td id="day-21">21</td>
+                    <td id="day-22">22</td>
+                    <td id="day-23">23</td>
+                    <td id="day-24">24</td>
+                    <td id="day-25">25</td>
+                    <td id="day-26">26</td>
+                </tr>
+                <tr>
+                    <td id="day-27">27</td>
+                    <td id="day-28">28</td>
+                    <td id="day-29">29</td>
+                    <td id="day-30">30</td>
+                    <td id="day-31">31</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <button id="newNumber" onclick="nextNumber()">Next Number</button>
+            <input id="input" type="text" placeholder="Write your number here" autocorrect="off" autocomplete="off"
+                autocapitalize="off" spellcheck="false">
+            <button onclick="startListening()">Speak &#127908</button>
+            <button onclick="check()">Check</button>
+            <p id="scoreOne">0 Correct and 0 Incorrect</p>
+            <p id="scoreTwo" style="display: none;">0 Correct and 0 Incorrect</p>
+        </div>
+    </article>
+
+    <script src="Scripts/CalendarToss.js"></script>
+</body>

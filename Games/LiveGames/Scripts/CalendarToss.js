@@ -2,6 +2,7 @@ var tableId = null;
 var isSinglePlayer;
 var previousId = null;
 var turn = true; // True for player 1's turn, false for player 2.
+var checked = false;
 
 var playerOneCorrect = 0;
 var playerTwoCorrect = 0;
@@ -39,9 +40,13 @@ function nextNumber() {
     previousId = tableId;
 
     document.getElementById("input").value = "";
+    checked = false;
 }
 
 function check() {
+    if (checked) {
+        return;
+    }
     const cell = document.getElementById(tableId).textContent;
     const input = document.getElementById("input").value;
     const scoreOne = document.getElementById("scoreOne");
@@ -79,6 +84,8 @@ function check() {
             turn = true;
         }
     }
+
+    checked = true;
 }
 
 function startListening() {

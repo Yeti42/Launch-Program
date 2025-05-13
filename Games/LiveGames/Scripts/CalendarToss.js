@@ -12,6 +12,10 @@ var playerTwoWrong = 0;
 const startOneText = "Player 1 score: ";
 const startTwoText = "Player 2 score: ";
 
+/**
+ * Sets the game to either singleplayer or 2 player mode
+ * @param {boolean} input Should the game be in single player mode?
+ */
 function single(input) {
     isSinglePlayer = input;
 
@@ -27,6 +31,9 @@ function single(input) {
     }
 }
 
+/**
+ * Select the next number and allow checking inputs
+ */
 function nextNumber() {
     if (previousId != null) {
         const previousCell = document.getElementById(previousId);
@@ -43,14 +50,19 @@ function nextNumber() {
     checked = false;
 }
 
+/**
+ * Checks if the number in the text input is correct, if so it increases the correct
+ * score counter of the current player. If incorrect, increases the incorrect counter of the current player
+ */
 function check() {
-    if (checked) {
-        return;
-    }
     const cell = document.getElementById(tableId).textContent;
     const input = document.getElementById("input").value;
     const scoreOne = document.getElementById("scoreOne");
     var isCorrect;
+
+    if (checked || (input == "")) {
+        return;
+    }
 
     if (cell == input) {
         isCorrect = true;
@@ -88,6 +100,9 @@ function check() {
     checked = true;
 }
 
+/**
+ * Speech reconition, only works for Chrome-based browsers.
+ */
 function startListening() {
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 

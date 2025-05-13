@@ -6,8 +6,8 @@ const wordsStart = [
     "dog", "dab", "dot", "dig", "den", "dip", "dim",
     "tab", "ten", "tag", "tap", "tin", "tip", "tug", "top", "tub",
     "pat", "pad", "pet", "pot", "pin", "put", "pan",
-    "get", "gum", "got", "gas", "gap", "gad", "gab", "gig",
-    "not", "net", "nap", "nip", "nut", "nod", "nan", "nab"
+    "get", "gum", "got", "gas", "gap", "gad", "gab",
+    "not", "net", "nap", "nip", "nut", "nod", "nab"
 ];
 
 const wordsEnd = [
@@ -28,6 +28,9 @@ const resultText = document.getElementById("Score");
 var correct = 0;
 var incorrect = 0;
 
+/**
+ * Say the word. If a word has not been selected, select a new word then say it.
+ */
 function speak() {
     if (!spoken) {
         NewWord();
@@ -39,6 +42,9 @@ function speak() {
     speechSynthesis.speak(utterance);
 }
 
+/**
+ * Select a new word. This is done with a coin toss for which list to select from, then a ranomly selected word from that list.
+ */
 function NewWord() {
     document.getElementById("WordInput").value = "";
 
@@ -97,7 +103,7 @@ function check(color, inputWord) {
     document.getElementById("WordHelp").innerHTML = "<br>";
 }
 
-
+// Logic for accepting forms without needing to go to a new page.
 document.querySelector("form").addEventListener("submit", function(event) {
     event.preventDefault(); // Stops page from reloading
 

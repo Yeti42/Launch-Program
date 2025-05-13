@@ -131,17 +131,26 @@ function SelectPossibleWords() {
 	possibleWords = wordGroups[indexes[0]].concat(wordGroups[indexes[1]]);
 }
 
+/**
+ * Select the words to be said/checked
+ */
 function ActualWords() {
 	const wordIndexes = GetRandomIndexs(possibleWords);
 	wordOne = possibleWords[wordIndexes[0]];
 	wordTwo = possibleWords[wordIndexes[1]];
 }
 
+/**
+ * Generate two words
+ */
 function GenerateWords() {
 	SelectPossibleWords()
 	ActualWords();
 }
 
+/**
+ * If words aren't generated, generate them. After checking, say the words, 3 seconds apart from each other.
+ */
 function speak() {
 	if (!generated) {
 		GenerateWords();
@@ -159,6 +168,9 @@ function speak() {
 	}, 3000);
 }
 
+/**
+ * Allow the generation of new words, reset the button's text
+ */
 function AllowNewWords(){
 	generated = false;
 	const button = document.getElementById("SpeakButton");
@@ -167,13 +179,17 @@ function AllowNewWords(){
 
 
 /**
- * 
+ * Get the two words. This is for testing purposes
  * @returns Array of the 2 generated words
  */
 function GetWords() {
 	return [wordOne, wordTwo];
 }
 
+/**
+ * Check if the two selected words rhyme
+ * @returns boolean value based on if the two words rhyme or not
+ */
 function DoWordsRhyme() {
 	for (let group of wordGroups) {
 		if (group.includes(wordOne) && group.includes(wordTwo)) {
@@ -183,6 +199,11 @@ function DoWordsRhyme() {
 	return false;
 }
 
+/**
+ * Checks if the player is correct on if the words rhyme or not
+ * @param {boolean} answer true for the words rhyming, false for them not.
+ * @returns If words have not yet been generated.
+ */
 function IsCorrect(answer) {
 	if (!generated) {
 		return;

@@ -87,27 +87,47 @@ var wordOne;
 var wordTwo;
 
 var generated = false;
+var correct = 0;
+var incorrect = 0;
 
-
+/**
+ * Gets a random index, then calls "GetUniqueIndex" to get a second index
+ * @param {array} list List to get random indexes for
+ * @returns Two indexes as an array
+ */
 function GetRandomIndexs(list) {
+	if (list.length < 2) {
+		throw new Error("List too short");
+	}
+
 	const indexOne = Math.floor(Math.random() * list.length);
 	const indexTwo = GetUniqueIndex(list, indexOne);
 
 	return [indexOne, indexTwo];
 }
 
+/**
+ * Obtains a unique index
+ * @param {array} list List to get the unique index for
+ * @param {int} indexOne Index that was already selected in the calling function
+ * @returns A unique index
+ */
 function GetUniqueIndex(list, indexOne) {
 	var outIndex = Math.floor(Math.random() * list.length);
 	if (outIndex == indexOne) {
-		GetUniqueIndex(list, indexOne);
+		return GetUniqueIndex(list, indexOne);
 	}
 	else {
 		return outIndex;
 	}
 }
 
+/**
+ * This picks two lists and combines them. Doing this increases the chance of getting words that Rhyme
+ */
 function SelectPossibleWords() {
 	const indexes = GetRandomIndexs(wordGroups);
+	console.log(indexes);
 	possibleWords = wordGroups[indexes[0]].concat(wordGroups[indexes[1]]);
 }
 
@@ -120,36 +140,66 @@ function ActualWords() {
 function GenerateWords() {
 	SelectPossibleWords()
 	ActualWords();
+}
 
+function speak() {
+	if (!generated) {
+		GenerateWords();
+		generated = true;
+		const button = document.getElementById("SpeakButton");
+		button.textContent = "Say words again";
+	}
 	const utteranceOne = new SpeechSynthesisUtterance(wordOne);
 	const utteracneTwo = new SpeechSynthesisUtterance(wordTwo);
 
 	speechSynthesis.speak(utteranceOne);
 
-
 	setTimeout(() => {
 		speechSynthesis.speak(utteracneTwo);
 	}, 3000);
-
-	generated = true;
-}
-
-function speak() {
-	if (!generated) {
-		GenerateWords()
-	}
-	else {
-		const utteranceOne = new SpeechSynthesisUtterance(wordOne);
-		const utteracneTwo = new SpeechSynthesisUtterance(wordTwo);
-
-		speechSynthesis.speak(utteranceOne);
-
-		setTimeout(() => {
-			speechSynthesis.speak(utteracneTwo);
-		}, 3000);
-	}
 }
 
 function AllowNewWords(){
 	generated = false;
+	const button = document.getElementById("SpeakButton");
+	button.textContent = "New Words";
+}
+
+
+/**
+ * 
+ * @returns Array of the 2 generated words
+ */
+function GetWords() {
+	return [wordOne, wordTwo];
+}
+
+function DoWordsRhyme() {
+	for (let group of wordGroups) {
+		if (group.includes(wordOne) && group.includes(wordTwo)) {
+			return true;
+		}
+	}
+	return false;
+}
+
+function IsCorrect(answer) {
+	if (!generated) {
+		return;
+	}
+
+	const correctText = document.getElementById("Score");
+	if (answer && DoWordsRhyme()) {
+		correct++;
+		console.log("2 true");
+	} else if (!answer && !DoWordsRhyme()) {
+		correct++;
+		console.log("2 false");
+	} else {
+		incorrect++;
+		console.log("Other");
+	}
+
+	correctText.textContent = correct + " Correct and " + incorrect + " Incorrect";
+	AllowNewWords();
 }

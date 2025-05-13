@@ -3,6 +3,11 @@ var isSinglePlayer;
 var previousId = null;
 var turn = true; // True for player 1's turn, false for player 2.
 
+var playerOneCorrect = 0;
+var playerTwoCorrect = 0;
+var playerOneWrong = 0;
+var playerTwoWrong = 0;
+
 const startOneText = "Player 1 score: ";
 const startTwoText = "Player 2 score: ";
 
@@ -32,11 +37,14 @@ function nextNumber() {
     cell.style.backgroundColor = "yellow";
 
     previousId = tableId;
+
+    document.getElementById("input").value = "";
 }
 
 function check() {
     const cell = document.getElementById(tableId).textContent;
     const input = document.getElementById("input").value;
+    const scoreOne = document.getElementById("scoreOne");
     var isCorrect;
 
     if (cell == input) {
@@ -46,7 +54,30 @@ function check() {
     }
 
     if (isSinglePlayer) {
-        
+        if (isCorrect) {
+            playerOneCorrect++;
+        } else {
+            playerOneWrong++;
+        }
+        scoreOne.textContent = playerOneCorrect + " Correct and " + playerOneWrong + " Incorrect";
+    } else {
+        if (turn) {
+            if (isCorrect) {
+                playerOneCorrect++;
+            } else {
+                playerOneWrong++;
+            }
+            scoreOne.textContent = startOneText + playerOneCorrect + " Correct and " + playerOneWrong + " Incorrect";
+            turn = false;
+        } else {
+            if (isCorrect) {
+                playerTwoCorrect++;
+            } else {
+                playerTwoWrong++;
+            }
+            scoreTwo.textContent = startTwoText + playerTwoCorrect + " Correct and " + playerTwoWrong + " Incorrect";
+            turn = true;
+        }
     }
 }
 

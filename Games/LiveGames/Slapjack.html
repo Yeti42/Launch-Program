@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slapjack</title>
+    <link rel="stylesheet" href="../../layout.css">
+    <style>
+        div {
+            font-size: 22px;
+        }
+
+        #card {
+            font-size: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <article>
+        <h2>Target Letter: <span id="targetLetter">?</span></h2>
+
+        <div id="card" onclick="check()">?</div>
+
+        <br>
+        <button id="start" onclick="start()">Start Game</button>
+        <button id="next" style="display:none;" onclick="showRandom()">Next Card</button>
+
+        <div id="result"></div>
+    </article>
+
+    <script src="Scripts/Slapjack.js"></script>
+</body>

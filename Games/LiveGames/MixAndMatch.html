@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slapjack</title>
+    <link rel="stylesheet" href="../../layout.css">
+    <style>
+        div {
+            font-size: 22px;
+        }
+    </style>
+</head>
+
+<body onload="newLetter()">
+    <article>
+        <div id="letter"></div>
+        <div id="lowercase"></div>
+        <br>
+        <button id="correct" onclick="check(true)">Matching</button>
+        <button id="incorrect" onclick="check(false)">Don't match</button>
+        <div id="score">0 Correct answers and 0 Incorrect answers</div>
+
+        <script src="Scripts/MixAndMatch.js"></script>
+    </article>
+</body>

@@ -5,6 +5,15 @@ var result = document.getElementById("result");
 var targetLetterSpan = document.getElementById("targetLetter");
 var next = document.getElementById("next");
 var deck = [];
+var isStart = true;
+
+function button() {
+    if (isStart) {
+        start();
+    } else {
+        showRandom();
+    }
+}
 
 function start() {
     // Choose a target letter
@@ -15,8 +24,9 @@ function start() {
     setDeck(target); // <-- create deck first
     showRandom();     // <-- then show from deck
 
-    next.style.display = "inline-block";
-    document.getElementById("start").textContent = "New Letter";
+    document.getElementById("start").textContent = "Next Card";
+    isStart = false;
+    document.getElementById("retry").style.display = "none";
 }
 
 function setDeck(letter) {
@@ -38,6 +48,9 @@ function showRandom() {
 }
 
 function check() {
+    if (isStart) {
+        return;
+    }
     const shownLetter = card.textContent;
     if (shownLetter == target) {
         result.textContent = "SLAP! Correct!";
@@ -45,9 +58,18 @@ function check() {
     } else {
         result.textContent = "Oops! Wrong letter.";
         result.style.color = "red";
+        document.getElementById("retry").style.display = "inherit";
     }
+    document.getElementById("start").textContent = "New Letter";
+    isStart = true;
 };
 
 function shuffle(arr) {
     return arr.slice().sort(() => Math.random() - 0.5);
+}
+
+function allowRetry() {
+    document.getElementById("start").textContent = "Next Card";
+    isStart = false;
+    document.getElementById("retry").style.display = "none";
 }

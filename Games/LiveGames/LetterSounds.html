@@ -32,6 +32,21 @@
         <p id="WordHelp"><br></p>
         <button id="SpeakButton" onclick="speak()">New Word</button>
         <p id="Score">0 Correct and 0 Incorrect</p>
+        <br>
+
+        <button onclick="document.getElementById('popup').style.display='block'">How to play</button>
+
+        <div id="popup" class="popup">
+            <div class="popupContent">
+                <p>Click "New Word" to start<br><br>
+                    Type the word, then press "Front" if the word starts with the letter and "End" if it ends with the letter.<br><br>
+                    Repeat as long as you desire.
+                </p>
+                <button class="close"
+                    onclick="document.getElementById('popup').style.display='none'">Close</button>
+            </div>
+
+        </div>
     </article>
 
     <script src="Scripts/LetterSounds.js"></script>

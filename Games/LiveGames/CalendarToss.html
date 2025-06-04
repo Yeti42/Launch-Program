@@ -103,6 +103,22 @@
             <p id="scoreOne">0 Correct and 0 Incorrect</p>
             <p id="scoreTwo" style="display: none;">0 Correct and 0 Incorrect</p>
         </div>
+
+        <br>
+
+        <button onclick="document.getElementById('popup').style.display='block'">How to play</button>
+
+        <div id="popup" class="popup">
+            <div class="popupContent">
+                <p>Start by selecting either single player or two players.<br><br>
+                    Player(s) should then press the "Next Number" button and write out their number, or speak it after pressing the "Speak" button.<br><br>
+                    Go for as long as you wish.
+                </p>
+                <button class="close"
+                    onclick="document.getElementById('popup').style.display='none'">Close</button>
+            </div>
+
+        </div>
     </article>
 
     <script src="Scripts/CalendarToss.js"></script>

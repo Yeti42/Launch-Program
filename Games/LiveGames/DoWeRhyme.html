@@ -20,13 +20,26 @@
 <body>
     <button class="dropdown"><a href="../AuditoryProcessingGames.html#A2">Return</a></button>
     <article>
-        <div>Press the "New Words" button. Then select "Rhymes" if the words ryme, or "Don't rhyme" if the words do not ryme.</div>
         <button id="SpeakButton" onclick="speak()">New Words</button>
         <button id="Reset" onclick="AllowNewWords()">Reset</button>
         <br>
         <button id="yes" onclick="IsCorrect(true)">Rhymes</button>
         <button id="no" onclick="IsCorrect(false)">Don't rhyme</button>
         <p id="Score">0 Correct and 0 Incorrect</p>
+
+        <button onclick="document.getElementById('popup').style.display='block'">How to play</button>
+
+        <div id="popup" class="popup">
+            <div class="popupContent">
+                <p>Press the "New Words" button. Then select "Rhymes" if the words ryme, or "Don't rhyme" if the words do not ryme.<br><br>
+                    Press "Say words again" button if you need to hear the words another time.<br><br>
+                    You can also press the "Reset" button to allow for selecting new words if you can't properly hear them.<br><br>
+                </p>
+                <button class="close"
+                    onclick="document.getElementById('popup').style.display='none'">Close</button>
+            </div>
+
+        </div>
     </article>
 
     <script src="Scripts/DoWeRhyme.js"></script>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slapjack</title>
+    <title>Mix And Match</title>
     <link rel="stylesheet" href="../../layout.css">
     <style>
         div {
@@ -25,6 +25,7 @@
 </head>
 
 <body onload="newLetter()">
+    <button class="dropdown"><a href="../LetterRecognitionGames.html#LRS20">Return</a></button>
     <article>
         <div id="letter"></div>
         <div id="lowercase"></div>
@@ -32,6 +33,20 @@
         <button id="correct" onclick="check(true)">Matching</button>
         <button id="incorrect" onclick="check(false)">Don't match</button>
         <div id="score">0 Correct answers and 0 Incorrect answers</div>
+        <br>
+
+        <button onclick="document.getElementById('popup').style.display='block'">How to play</button>
+
+        <div id="popup" class="popup">
+            <div class="popupContent">
+                <p>Click "Matching" if the letters are the same. (Example: <b>E</b> and <b>e</b>)<br><br>
+                    Click "Don't match" if the letters are different. (Example: <b>L</b> and <b>p</b>) 
+                </p>
+                <button class="close"
+                    onclick="document.getElementById('popup').style.display='none'">Close</button>
+            </div>
+
+        </div>
 
         <script src="Scripts/MixAndMatch.js"></script>
     </article>

@@ -82,6 +82,19 @@
         </table>
 
         <img src="../images/WhereDidIPark/Car1.png" id="draggable">
+
+        <button onclick="document.getElementById('popup').style.display='block'">How to play</button>
+
+        <div id="popup" class="popup">
+            <div class="popupContent">
+                <p>Drag the car with the uppercase letter to the same letter in lowercase.<br><br>
+                    Try to get your score as high as possible!
+                </p>
+                <button class="close"
+                    onclick="document.getElementById('popup').style.display='none'">Close</button>
+            </div>
+
+        </div>
     </article>
 
     <script src="Scripts/WhereDidIPark.js"></script>

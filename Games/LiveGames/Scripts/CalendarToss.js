@@ -64,7 +64,11 @@ function check() {
         return;
     }
 
-    if (cell == input) {
+    const numericInput = parseInt(input);
+    const wordInput = wordsToNumber(input);
+    const inputNumber = !isNaN(numericInput) ? numericInput : wordInput;
+
+    if (parseInt(cell) == inputNumber) {
         isCorrect = true;
     } else {
         isCorrect = false;
@@ -99,6 +103,29 @@ function check() {
 
     checked = true;
 }
+
+function wordsToNumber(words) {
+    const numberWords = {
+        zero: 0, one: 1, two: 2, three: 3, four: 4,
+        five: 5, six: 6, seven: 7, eight: 8, nine: 9,
+        ten: 10, eleven: 11, twelve: 12, thirteen: 13, fourteen: 14,
+        fifteen: 15, sixteen: 16, seventeen: 17, eighteen: 18, nineteen: 19,
+        twenty: 20, thirty: 30
+    };
+
+    words = words.toLowerCase().replace(/-/g, ' ').trim();
+    const parts = words.split(/\s+/);
+    let number = 0;
+
+    if (parts.length == 1) {
+        return numberWords[parts[0]] ?? NaN;
+    } else if (parts.length === 2 && numberWords[parts[0]] >= 20 && numberWords[parts[0]] % 10 === 0) {
+        return (numberWords[parts[0]] ?? 0) + (numberWords[parts[1]] ?? 0);
+    }
+
+    return NaN;
+}
+
 
 /**
  * Speech reconition, only works for Chrome-based browsers.

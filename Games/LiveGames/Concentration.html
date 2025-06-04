@@ -108,6 +108,20 @@
         </table>
         <p id="winText"></p>
 
+        <button onclick="document.getElementById('popup').style.display='block'">How to play</button>
+
+        <div id="popup" class="popup">
+            <div class="popupContent">
+                <p>Click two boxes to begin.<br><br>
+                    Try to remember where the letters are and find the matching lowercase letter.<br><br>
+                    You win when the whole grid is green.
+                </p>
+                <button class="close"
+                    onclick="document.getElementById('popup').style.display='none'">Close</button>
+            </div>
+
+        </div>
+
         <script src="Scripts/Concentration.js"></script>
     </article>
 </body>

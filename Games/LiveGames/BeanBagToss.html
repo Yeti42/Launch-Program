@@ -82,8 +82,20 @@
         <button onclick="startListening()">Speak &#127908</button>
 
         <br>
-        <div id="isCorrect">Press the toss button and select a word</div>
+        <div id="isCorrect"></div>
+        <br>
 
+        <button onclick="document.getElementById('popup').style.display='block'">How to play</button>
+
+        <div id="popup" class="popup">
+            <div class="popupContent">
+                <p>Press the toss button and select a word.<br><br>
+                    Then input a word beginning with the highlighted letters, or press "Speak" and say a word.
+                </p>
+                <button class="close" onclick="document.getElementById('popup').style.display='none'">Close</button>
+            </div>
+
+        </div>
     </article>
 
     <script src="Scripts/BeanBagToss.js"></script>

@@ -1,53 +1,59 @@
 const lowercase = [...Array(26)].map((_, i) => String.fromCharCode(97 + i));
 const uppercase = [...Array(26)].map((_, i) => String.fromCharCode(65 + i));
 
-var letters;
-var matchedTotal = 0;
-
-console.log("Lowercase:", lowercase);
-console.log("Uppercase:", uppercase);
+let matchedTotal = 0;
 
 document.addEventListener("DOMContentLoaded", () => {
-    letters = lowercase.concat(uppercase);
-
-    // Shuffle the letters
-    for (let i = letters.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [letters[i], letters[j]] = [letters[j], letters[i]];
-    }
-
-    // Save a mapping from cell ID to letter
-    const cellLetters = {}; // key: cell id, value: letter
-
-    for (let i = 0; i < 52; i++) {
-        const cellId = (i + 1).toString();
-        const cell = document.getElementById(cellId);
-        if (cell) {
-            cellLetters[cellId] = letters[i];
-            cell.textContent = "?"; // hide letter initially
+    // Select 8 letters
+    const selectedIndexes = [];
+    while (selectedIndexes.length < 8) {
+        const index = Math.floor(Math.random() * 26);
+        if (!selectedIndexes.includes(index)) {
+            selectedIndexes.push(index);
         }
     }
 
-    var revealed = [];
+    // Get letter pairs, making 16 total letters
+    const selectedLetters = selectedIndexes.flatMap(i => [lowercase[i], uppercase[i]]);
 
+    // Shuffle letters
+    for (let i = selectedLetters.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [selectedLetters[i], selectedLetters[j]] = [selectedLetters[j], selectedLetters[i]];
+    }
+
+    // Map of cell ID to letter
+    const cellLetters = {};
+    for (let i = 0; i < 16; i++) {
+        const cellId = (i + 1).toString();
+        const cell = document.getElementById(cellId);
+        if (cell) {
+            cellLetters[cellId] = selectedLetters[i];
+            cell.textContent = "?"; // Hide initially
+        }
+    }
+
+    let revealed = [];
+
+    // Checker for when people click on the letters
     document.querySelectorAll("td").forEach(cell => {
         cell.addEventListener("click", () => {
             const cellId = cell.id;
 
-            // Skip if already matched or already visible or if two cells already revealed
-            if (cell.classList.contains("matched") || revealed.includes(cell) || revealed.length == 2) return;
+            if (cell.classList.contains("matched") || revealed.includes(cell) || revealed.length === 2) return;
 
-            // Reveal the letter by setting textContent
             cell.textContent = cellLetters[cellId];
             revealed.push(cell);
 
             if (revealed.length === 2) {
                 const [first, second] = revealed;
+                const firstLetter = cellLetters[first.id];
+                const secondLetter = cellLetters[second.id];
 
-                if (cellLetters[first.id].toLowerCase() === cellLetters[second.id].toLowerCase()) {
+                if (firstLetter.toLowerCase() === secondLetter.toLowerCase()) {
                     first.classList.add("matched");
                     second.classList.add("matched");
-                    matchedTotal = matchedTotal + 2;
+                    matchedTotal += 2;
                     revealed = [];
                 } else {
                     setTimeout(() => {
@@ -58,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
 
-            if (matchedTotal == 52) {
+            if (matchedTotal === 16) {
                 document.getElementById("winText").textContent = "Well done!";
             }
         });

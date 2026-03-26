@@ -8,6 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
     <header>
         <h1>Manual</h1>
@@ -54,35 +55,34 @@
                     <li><a href="Manual/bucket.html">The Launch Bucket</a></li>
                 </ul>
             </div><br>
-            <button class="collapsible">&#x25B6; The Launch Cupboard</button>
+            <button class="collapsible">&#x25B6; The Launch Cupboards</button>
             <div class="content">
                 <ul>
-                    <li><a href="Manual/cupboard.html#CUP1">Top Shelf</a></li>
-                    <li><a href="Manual/cupboard.html#CUP2">Shelf 2</a></li>
-                    <li><a href="Manual/cupboard.html#CUP3">Shelf 3</a></li>
-                    <li><a href="Manual/cupboard.html#CUP4">Shelf 4</a></li>
-                    <li><a href="Manual/cupboard.html#CUP5">Shelf 5</a></li>
-                    <li><a href="Manual/cupboard.html#CUP6">Bottom Shelf</a></li>
+                    <li><a href="Manual/cupboard.html#CUP1">Launch Cupboard 1 Tutor Buckets and Miscellaneous Beginning Sounds Games</a></li>
+                    <li><a href="Manual/cupboard.html#CUP2">Launch Cupboard 2 Games Bins Trinkets and Number Games</a></li>
+                    <li><a href="Manual/cupboard.html#CUP3">Launch Cupboard 3 Sight Words Reading Books and Workbooks</a></li>
+                    <li><a href="Manual/cupboard.html#CUP4">Launch Cupboard 4 Blends & Digraphs/Rhyming/Word Families</a></li>
+                    <li><a href="Manual/cupboard.html#CUP5">Launch Cupboard 5 Vowel Sounds</a></li>
                 </ul>
             </div>
         </article>
     </section>
-	<script>
-		var coll = document.getElementsByClassName("collapsible");
-		var i;
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
 
-		for (i = 0; i < coll.length; i++) {
-			coll[i].addEventListener("click", function () {
-				this.classList.toggle("active");
-				var content = this.nextElementSibling;
-				if (content.style.display === "block") {
-					content.style.display = "none";
-				} else {
-					content.style.display = "block";
-				}
-			});
-		}
-	</script>
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    </script>
     <script>
         var coll = document.getElementsByClassName("dropdown");
         var i;

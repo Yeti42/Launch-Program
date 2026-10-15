@@ -170,3 +170,14 @@ img {
     cursor: pointer;
     margin-top: 10px;
 }
+
+@font-face {
+    font-family: 'Bastard';
+    src: url('FontThing/TimesNewBastard-RegularWeb.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body.you_fool {
+    font-family: 'Bastard', sans-serif;
+}

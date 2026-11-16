@@ -12,6 +12,12 @@ header h1 {
 
 body {
     background-image: url('images/background.png');
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+nav.orderB {
+    display: none;
 }
 
 .order {
@@ -26,6 +32,8 @@ body {
     border: 2px solid rgb(0, 0, 0);
     background-color: rgb(173, 216, 230);
     text-align: center;
+    cursor: pointer;
+    z-index: 10;
 }
 
 /* Dropdown menu */

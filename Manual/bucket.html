@@ -13,9 +13,9 @@
     <header>
         <h1>The Launch<br>Tutor Bucket</h1>
     </header>
-    <button class="dropdown">Menu</button>
-    <nav class="orderB">
-        <ul class="menu"></ul>
+    <button type="button" class="dropdown" aria-label="Open navigation menu" aria-expanded="false">Menu</button>
+    <nav class="orderB" aria-label="Main navigation">
+        <ul class="menu">
             <li><a href="../index.html">Home</a></li>
             <li><a href="../Manual.html">Manual</a></li>
             <li><a href="../GameSection.html">Games</a></li>
@@ -56,23 +56,8 @@
             Please contact the Launch Program Coordinator if any items are missing/need replacing.
         </article>
     </section>
-    <script>
-        var coll = document.getElementsByClassName("dropdown");
-        var i;
-
-        for (i = 0; i < coll.length; i++) {
-            coll[i].addEventListener("click", function () {
-                this.classList.toggle("active");
-                var content = this.nextElementSibling;
-                if (content.style.display === "block") {
-                    content.style.display = "none";
-                } else {
-                    content.style.display = "block";
-                }
-            });
-        }
-    </script>
-    <script src="../FontThing/Font.js"></script>
+    <script src="../site.js" defer></script>
+<script src="../FontThing/Font.js"></script>
 </body>
 
 </html>
